@@ -9,22 +9,47 @@
 // mean? -> anonymous self-executing function
 
 let app;
+
+
 (function(app){
 
     // Declare Function Variables here...
-    console.log("%cDeclaring Variables", "color: red;")
+    //console.log("%cDeclaring Variables", "color: red;")
     let largeButton;
+
+    let largeButtonParent;
+    let h3AboutMe;
+
+    let firstParagraph;
 
     /**
      * Variable initialization in this function
      *
      */
     function Start()
-    {
+    {  
+        // 1.a) Replacing the large button's text
         largeButton = document.getElementById("largeButton");
-        console.log(largeButton);
         largeButton.textContent = "Learn More";
-        
+
+        // 1.b) Inserting an about me h3 tag before the large button       
+        largeButtonParent = largeButton.parentNode; 
+        h3AboutMe = document.createElement("h3");
+        h3AboutMe.textContent = "Name: [Spence McComb] [100426427]";
+        largeButtonParent.insertBefore(h3AboutMe, largeButton);
+
+        // 1.c) Replacing the first paragraph's text with the provided snippet
+        firstParagraph = document.getElementById("firstParagraph");
+        firstParagraph.textContent = 
+        "JavaScript is a prototype-based language, and every object in JavaScript has a hidden internal property called Prototype that can be used to extend object properties and methods.";
+        console.log(firstParagraph.textContent);
+
+        // 1.d) Hiding the first paragraph
+        firstParagraph.hidden = true;
+
+
+
+
 
 
         Main();
@@ -45,9 +70,9 @@ let app;
 })(app || (app = {}));
 
 /**
-         * git init
-         * git add .
-         * git commit -m "first commit"
-         * git remote add origin https://github.com/SpenceMcComb/WEBD6201-04-Test-1.git
-         * git push -u origin master
-         */
+ * git init
+ * git add .
+ * git commit -m "first commit"
+ * git remote add origin https://github.com/SpenceMcComb/WEBD6201-04-Test-1.git
+ * git push -u origin master
+ */
