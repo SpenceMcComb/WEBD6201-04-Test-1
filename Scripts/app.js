@@ -6,21 +6,24 @@
 
 "use strict";
 //IIFE - Immediately Invoked Function Expression
-// mean? -> anonymous self-executing function
-
 let app;
-
 
 (function(app){
 
-    // Declare Function Variables here...
-    //console.log("%cDeclaring Variables", "color: red;")
+    /** 
+     * Function variables
+     */ 
+
+    // Part 1
     let largeButton;
 
+    // Part 2
     let largeButtonParent;
     let h3AboutMe;
 
+    // Part 3
     let firstParagraph;
+
 
     /**
      * Variable initialization in this function
@@ -39,14 +42,13 @@ let app;
         // 1.b) Inserting an about me h3 tag before the large button       
         largeButtonParent = largeButton.parentNode; 
         h3AboutMe = document.createElement("h3");
-        h3AboutMe.textContent = "Name: [Spence McComb] [100426427]";
+        h3AboutMe.textContent = "Name: Spence McComb - 100426427";
         largeButtonParent.insertBefore(h3AboutMe, largeButton);
 
         // 1.c) Replacing the first paragraph's text with the provided snippet
         firstParagraph = document.getElementById("firstParagraph");
         firstParagraph.textContent = 
         "JavaScript is a prototype-based language, and every object in JavaScript has a hidden internal property called Prototype that can be used to extend object properties and methods.";
-        console.log(firstParagraph.textContent);
 
         // 1.d) Hiding the first paragraph
         firstParagraph.hidden = true;
@@ -68,8 +70,6 @@ let app;
             }
         });
 
-
-
         Main();
     }
 
@@ -82,15 +82,5 @@ let app;
 
     }
 
-
-
     window.addEventListener("load", Start);
 })(app || (app = {}));
-
-/**
- * git init
- * git add .
- * git commit -m "first commit"
- * git remote add origin https://github.com/SpenceMcComb/WEBD6201-04-Test-1.git
- * git push -u origin master
- */
