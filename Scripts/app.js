@@ -28,6 +28,10 @@ let app;
      */
     function Start()
     {  
+        /**
+         * PART 1
+         */
+
         // 1.a) Replacing the large button's text
         largeButton = document.getElementById("largeButton");
         largeButton.textContent = "Learn More";
@@ -48,7 +52,21 @@ let app;
         firstParagraph.hidden = true;
 
 
+        /**
+         * PART 2
+         */
 
+        // 2.a)b)c) Toggling the large button's text and the associated paragraph's visibility
+        largeButton.addEventListener("click", function(){
+            if (largeButton.textContent === "Learn More") {
+                largeButton.textContent = "Hide Details";
+                firstParagraph.hidden = false;
+            }
+            else if (largeButton.textContent === "Hide Details") {
+                largeButton.textContent = "Learn More";
+                firstParagraph.hidden = true;
+            }
+        });
 
 
 
